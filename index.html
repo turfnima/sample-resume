@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .section-title {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+        .about-text {
+            width: 70%;
+            padding: 0 20px;
+        }
+        .skills, .projects {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .skills-list, .projects-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .skills-list li, .projects-list li {
+            background: #e2e2e2;
+            padding: 10px;
+            margin: 10px;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>John Doe's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about" class="about">
+            <img src="profile.jpg" alt="John Doe">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>Hello! I’m John Doe, a passionate web developer with 5 years of experience in building dynamic and responsive websites. My expertise lies in front-end development, creating visually appealing user interfaces with modern web technologies.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2 class="section-title">Skills</h2>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2 class="section-title">Projects</h2>
+            <ul class="projects-list">
+                <li>
+                    <strong>Portfolio Website</strong>
+                    <p>A personal portfolio website built using HTML, CSS, and JavaScript.</p>
+                </li>
+                <li>
+                    <strong>E-commerce Platform</strong>
+                    <p>Developed a responsive e-commerce website using React and Node.js.</p>
+                </li>
+                <li>
+                    <strong>Blog Platform</strong>
+                    <p>Created a dynamic blog platform using Node.js and Express.</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>John Doe | <a href="mailto:john.doe@example.com">Contact Me</a></p>
+    </footer>
+
+</body>
+</html>
