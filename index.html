@@ -102,7 +102,7 @@
 <body>
 
     <header>
-        <h1>John Doe's Portfolio</h1>
+        <h1 id="name">Loading Name...</h1>
         <nav>
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -114,48 +114,62 @@
     </header>
 
     <div class="container">
+        <!-- About Section with Profile Image -->
         <section id="about" class="about">
-            <img src="robot.png" alt="John Doe">
+            <img src="images/profile.png" alt="Profile Picture">
             <div class="about-text">
                 <h2>About Me</h2>
-                <p>Hello! I’m John Doe, a passionate web developer with 5 years of experience in building dynamic and responsive websites. My expertise lies in front-end development, creating visually appealing user interfaces with modern web technologies.</p>
+                <p id="self-intro">Loading self-intro...</p> <!-- 动态加载自我介绍内容 -->
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="skills">
             <h2 class="section-title">Skills</h2>
-            <ul class="skills-list">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Git & GitHub</li>
-            </ul>
+            <ul class="skills-list" id="skills-list">Loading skills...</ul> <!-- 动态加载技能列表 -->
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="projects">
             <h2 class="section-title">Projects</h2>
-            <ul class="projects-list">
-                <li>
-                    <strong>Portfolio Website</strong>
-                    <p>A personal portfolio website built using HTML, CSS, and JavaScript.</p>
-                </li>
-                <li>
-                    <strong>E-commerce Platform</strong>
-                    <p>Developed a responsive e-commerce website using React and Node.js.</p>
-                </li>
-                <li>
-                    <strong>Blog Platform</strong>
-                    <p>Created a dynamic blog platform using Node.js and Express.</p>
-                </li>
-            </ul>
+            <ul class="projects-list" id="projects-list">Loading projects...</ul> <!-- 动态加载项目列表 -->
         </section>
     </div>
 
     <footer>
-        <p>John Doe | <a href="mailto:john.doe@example.com">Contact Me</a></p>
+        <p id="email">Loading email...</p> <!-- 动态加载邮箱 -->
     </footer>
+
+    <script>
+        // 函数用于加载并解析 content.txt 文件
+        function loadContentFile() {
+            fetch('content.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n');
+                    let content = {};
+
+                    // 解析 content.txt 文件内容
+                    lines.forEach(line => {
+                        const [key, value] = line.split(': ', 2);
+                        content[key] = value;
+                    });
+
+                    // 插入解析后的内容到页面相应部分
+                    document.getElementById('name').textContent = content['name'];
+                    document.getElementById('self-intro').textContent = content['self_intro'];
+                    document.getElementById('skills-list').innerHTML = content['skills'];
+                    document.getElementById('projects-list').innerHTML = content['projects'];
+                    document.getElementById('email').innerHTML = `<a href="mailto:${content['email']}">${content['email']}</a>`;
+                })
+                .catch(error => {
+                    console.error('Error loading content file:', error);
+                });
+        }
+
+        // 页面加载时调用函数
+        window.onload = loadContentFile;
+    </script>
 
 </body>
 </html>

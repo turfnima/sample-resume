@@ -1,0 +1,5 @@
+name: John Doe
+email: john.doe@example.com
+self_intro: Hello! I’m John Doe, a passionate web developer with 5 years of experience in building dynamic and responsive websites.
+skills: <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>Git & GitHub</li>
+projects: <li><strong>Portfolio Website</strong><p>A personal portfolio website built using HTML, CSS, and JavaScript.</p></li><li><strong>E-commerce Platform</strong><p>Developed a responsive e-commerce website using React and Node.js.</p></li>
